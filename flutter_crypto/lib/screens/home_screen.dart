@@ -5,6 +5,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:crypto/crypto.dart';
 import 'package:flutter_crypto/screens/info_screen.dart';
+import 'package:share_plus/share_plus.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -39,6 +40,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 toUpperCheckBoxWidget(),
                 const SizedBox(height: 18.0),
                 calculateButtonWidget(context),
+                const SizedBox(height: 30.0),
               ],
             ),
           ),
@@ -50,7 +52,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   AppBar appBarWidget() {
     return AppBar(
-      title: const Text('Data Encryption'),
+      title: const Text('Secure Hashing'),
       backgroundColor: const Color.fromARGB(255, 2, 77, 138),
       actions: [
         IconButton(
@@ -123,7 +125,7 @@ class _HomeScreenState extends State<HomeScreen> {
       maxLines: 10,
       textInputAction: TextInputAction.done,
       decoration: InputDecoration(
-        labelText: 'Hesaplanacak Veri',
+        labelText: 'Şifrelenecek Veri/Veriler',
         alignLabelWithHint: true,
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(5.0),
@@ -132,12 +134,15 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
-  Row toUpperCheckBoxWidget() {
-    return Row(
-      children: [
-        Checkbox(value: _isChecked, onChanged: checkBoxFunction),
-        const Text('Büyük Harfe Çevir'),
-      ],
+  GestureDetector toUpperCheckBoxWidget() {
+    return GestureDetector(
+      onTap: () => checkBoxFunction(_isChecked),
+      child: Row(
+        children: [
+          Checkbox(value: _isChecked, onChanged: checkBoxFunction),
+          const Text('Büyük Harfe Çevir'),
+        ],
+      ),
     );
   }
 
@@ -171,6 +176,11 @@ class _HomeScreenState extends State<HomeScreen> {
     var bytes = utf8.encode(data.toString());
     var bytesConvert;
     if (dropController.text == '' || dataController.text == '') {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text('Boş Geçilen Alanlar Var!'),
+        ),
+      );
     } else {
       switch (dropController.text) {
         case 'SHA-1':
@@ -228,6 +238,12 @@ class _HomeScreenState extends State<HomeScreen> {
               TextButton(
                 onPressed: () => FlutterClipboard.copy(text),
                 child: const Text('Panoya Kopyala'),
+              ),
+              TextButton(
+                onPressed: () async {
+                  await Share.share('${dropController.text}: $text');
+                },
+                child: const Text('Paylaş'),
               ),
               TextButton(
                 onPressed: () => Navigator.of(context).pop(),

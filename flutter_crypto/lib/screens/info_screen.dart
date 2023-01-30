@@ -26,10 +26,10 @@ class InfoScreen extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 const SizedBox(height: 8.0),
-                titleTextWidget('Data Encryption Nedir?'),
+                titleTextWidget('Secure Hashing Nedir?'),
                 const SizedBox(height: 10.0),
                 textWidget(
-                    '''\tData Encryption, şifreleme alanında geliştirilmiş olan algoritmalardan yararlanarak siz kullanıcılarımınzın verilerini en güvenilir şekilde şifrelemeyi gerçekleştirmektedir. 
+                    '''\tSecure Hashing, şifreleme alanında geliştirilmiş olan algoritmalardan yararlanarak siz kullanıcılarımızın verilerini en güvenilir şekilde şifrelemeyi gerçekleştirmektedir. 
                     \nSizlere sunulan:'''),
                 const SizedBox(height: 8.0),
                 textListWidget('SHA-1'),
@@ -42,9 +42,9 @@ class InfoScreen extends StatelessWidget {
                 textListWidget('MD-5'),
                 const SizedBox(height: 8.0),
                 textWidget(
-                    '''şifreleme algoritmalarından bir tanesini seçtikten sonra verinizi girerek şifreleme işlemini başarılı bir şekilde gerçekleştirebilirsiniz. 
+                    '''şifreleme algoritmalarından bir tanesini seçtikten sonra verilerinizi girerek şifreleme işlemini gerçekleştirebilirsiniz. 
                     \nDilerseniz verilerinizi girdikten sonra 'Büyük Harfe Çevir' kutucuğuna tıklayarak şifreleme sonuçunuzu büyük harflere çevirebilirsiniz. Şifreleme işleminiz sona erdiği zaman sizi açılır pencere karşılayacaktır. Sonuçlarınız bu açılır pencere ile size sunulmaktadır.
-                    \nŞifrelemiş olduğunuz sonuçlarınızı panonıza kopyalayabilirsiniz.
+                    \nŞifrelemiş olduğunuz sonuçlarınızı panonıza kopyalayabilirsiniz veyahut paylaşma özelliği ile istediğiniz şekilde paylaşabilrsiniz.
                     '''),
                 const SizedBox(height: 20.0),
               ],
