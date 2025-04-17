@@ -1,16 +1,12 @@
-# flutter_crypto
+# DATA ENCRYPTION MOBIL APPLICATION
 
-A new Flutter project.
+APP GALARY: https://appgallery.huawei.com/app/C107726695
 
-## Getting Started
+![SECURE](https://user-images.githubusercontent.com/98910348/215597660-bca9cc14-e38b-4da6-bc2b-37d5ff07374d.jpg)
 
-This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
+# DATA ENCRYPTION WEB
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+WEB: https://hsynadguzel.github.io/CRYPTO_WEB/#/
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+![image](https://user-images.githubusercontent.com/98910348/235442555-fc64db99-faf4-4d28-be9a-c0667a7a1ed4.png)
